@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "name": "config.json",
+  "description": "nconf wrapper that simplifies work with environment specific configuration files.",
+  "keywords": [
+    "configuration",
+    "config",
+    "json",
+    "nconf",
+    "wrapper"
+  ],
+  "author": "Romuald Bulyshko <romuald@bulyshko.com> (http://romualdbulyshko.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bulyshko/config.json"
+  },
+  "bugs": "https://github.com/bulyshko/config.json/issues",
+  "main": "./lib/config.js",
+  "dependencies": {
+    "nconf": "0.6.7"
+  }
+}
