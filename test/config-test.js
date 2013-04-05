@@ -16,7 +16,7 @@ function run(callback, options) {
     });
   }
 
-  var child = spawn('node', [test].concat(options.args), {env: env});
+  var child = spawn('node', [test].concat(options.args), { env: env });
 
   child.stdout.on('data', function (data) {
     callback(data.toString());
