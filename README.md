@@ -1,5 +1,7 @@
 # config.json
 
+[![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json)
+
 [nconf](https://github.com/flatiron/nconf) wrapper that simplifies work
 with environment specific configuration files.
 
@@ -21,7 +23,7 @@ $ npm install config.json
 
 ## Usage
 
-Create the default configuration file:
+### Create default configuration file
 
 ```bash
 $ vi sample.json
@@ -37,7 +39,7 @@ $ vi sample.json
 }
 ```
 
-Create environment specific configuration file:
+### Create environment specific configuration file
 
 ```bash
 $ vi sample.development.json
@@ -49,7 +51,9 @@ $ vi sample.development.json
 }
 ```
 
-Use config.json in your application:
+**Note:** Environment specific configuration files should be in the same directory as the default one.
+
+### Test config.json in action
 
 ```bash
 $ vi sample.js
@@ -64,7 +68,7 @@ console.log("mongodb:\n",
   "port:", config.mongodb.port);
 ```
 
-Lets run the above script:
+Run the above script:
 
 ```bash
 $ NODE_ENV=development node ./sample.js --mongodb:host "dharma.mongohq.com" --mongodb:port 10065
