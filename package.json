@@ -18,5 +18,11 @@
   "main": "./lib/config.js",
   "dependencies": {
     "nconf": "0.6.7"
+  },
+  "devDependencies": {
+    "mocha": "1.9.0"
+  },
+  "scripts": {
+    "test": "mocha test/*-test.js"
   }
 }
