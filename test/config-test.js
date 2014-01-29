@@ -1,8 +1,12 @@
-var assert = require('assert')
-    spawn = require('child_process').spawn,
-    test = require('path').join(__dirname, 'fixtures', 'test.js');
+var assert = require('assert');
+var path = require('path');
+var spawn = require('child_process').spawn;
+var basic = path.join(__dirname, 'fixtures', 'basic', 'test.js');
+var complex = path.join(__dirname, 'fixtures', 'complex', 'test.js');
 
-function run(callback, options) {
+function run(test, callback, options) {
+  options = options || {};
+
   var env = null;
 
   if (options.env) {
@@ -16,7 +20,7 @@ function run(callback, options) {
     });
   }
 
-  var child = spawn('node', [test].concat(options.args), { env: env });
+  var child = spawn('node', [test].concat(options.args), { env: env, cwd: path.dirname(test) });
 
   child.stdout.on('data', function (data) {
     callback(data.toString());
@@ -24,8 +28,15 @@ function run(callback, options) {
 }
 
 describe('config.json', function () {
-  it('should use default configuration file', function (done) {
-    run(function (foo) {
+  it('should load configuration file from the current working directory of the process', function (done) {
+    run(basic, function (foo) {
+      assert.equal(foo, 'bar');
+      done();
+    });
+  });
+
+  it('should use the default configuration file', function (done) {
+    run(complex, function (foo) {
       assert.equal(foo, 'bar');
       done();
     }, {
@@ -34,8 +45,8 @@ describe('config.json', function () {
   });
 
   it('should use environment specific configuration file', function (done) {
-    run(function (foo) {
-      assert.equal(foo, 'bar-dev');
+    run(complex, function (foo) {
+      assert.equal(foo, 'baz');
       done();
     }, {
       env: { NODE_ENV: 'development' }
@@ -43,7 +54,7 @@ describe('config.json', function () {
   });
 
   it('should use environment variables', function (done) {
-    run(function (foo) {
+    run(complex, function (foo) {
       assert.equal(foo, 'bar');
       done();
     }, {
@@ -52,12 +63,12 @@ describe('config.json', function () {
   });
 
   it('should use command-line arguments', function (done) {
-    run(function (foo) {
-      assert.equal(foo, 'bar2');
+    run(complex, function (foo) {
+      assert.equal(foo, 'qux');
       done();
     }, {
       env: { NODE_ENV: 'development', foo: 'bar' },
-      args: ['--foo', 'bar2']
+      args: ['--foo', 'qux']
     });
   });
 });
