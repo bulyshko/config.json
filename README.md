@@ -5,7 +5,7 @@ with environment specific configuration files.
 
 [![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json) [![Dependency Status](https://gemnasium.com/bulyshko/config.json.png)](https://gemnasium.com/bulyshko/config.json)
 
-Using config.json is easy; it:
+**config.json** is easy to use; it:
 
 - loads the default configuration file;
 - loads environment specific configuration file and overrides defaults;
@@ -22,6 +22,8 @@ $ npm install config.json
 ```
 
 ## Usage
+
+The top-level of `config.json` is a function that loads configuration file with the given `filepath`.
 
 ### Create default configuration file
 
@@ -82,6 +84,10 @@ mongodb:
  host: dharma.mongohq.com
  port: 10065
 ```
+
+### One more thing...
+
+`filepath` can be empty if your configuration file is in the current working directory of the process and is called **config.json**.
 
 ## License
 
