@@ -9,7 +9,11 @@
     "nconf",
     "wrapper"
   ],
-  "author": "Romuald Bulyshko <romuald@bulyshko.com> (http://romualdbulyshko.com)",
+  "author": {
+    "name": "Romuald Bulyshko",
+    "email": "romuald@bulyshko.com",
+    "url": "http://romualdbulyshko.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bulyshko/config.json"
