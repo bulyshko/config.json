@@ -1,7 +1,9 @@
-# config.json [![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json)
+# config.json
 
 [nconf](https://github.com/flatiron/nconf) wrapper that simplifies work
 with environment specific configuration files.
+
+[![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json) [![Dependency Status](https://gemnasium.com/bulyshko/config.json.png)](https://gemnasium.com/bulyshko/config.json)
 
 Using config.json is easy; it:
 
