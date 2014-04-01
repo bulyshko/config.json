@@ -3,7 +3,7 @@
 [nconf](https://github.com/flatiron/nconf) wrapper that simplifies work
 with environment specific configuration files.
 
-[![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json) [![Dependency Status](https://gemnasium.com/bulyshko/config.json.png)](https://gemnasium.com/bulyshko/config.json)
+[![Build Status](https://travis-ci.org/bulyshko/config.json.png?branch=master)](https://travis-ci.org/bulyshko/config.json) [![Dependency Status](https://david-dm.org/bulyshko/config.json.png?theme=shields.io)](https://david-dm.org/bulyshko/config.json)
 
 **config.json** is easy to use; it:
 
