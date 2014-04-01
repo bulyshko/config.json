@@ -1,8 +1,11 @@
 var assert = require('assert');
 var path = require('path');
 var spawn = require('child_process').spawn;
-var basic = path.join(__dirname, 'fixtures', 'basic', 'test.js');
-var complex = path.join(__dirname, 'fixtures', 'complex', 'test.js');
+var tests = {
+    basic: path.join(__dirname, 'fixtures', 'basic', 'test.js'),
+    complex: path.join(__dirname, 'fixtures', 'complex', 'test.js'),
+    specific: path.join(__dirname, 'fixtures', 'complex', 'test-specific-env.js')
+};
 
 function run(test, callback, options) {
     options = options || {};
@@ -29,14 +32,14 @@ function run(test, callback, options) {
 
 describe('config.json', function () {
     it('should load configuration file from the current working directory of the process', function (done) {
-        run(basic, function (foo) {
+        run(tests.basic, function (foo) {
             assert.equal(foo, 'bar');
             done();
         });
     });
 
     it('should use the default configuration file', function (done) {
-        run(complex, function (foo) {
+        run(tests.complex, function (foo) {
             assert.equal(foo, 'bar');
             done();
         }, {
@@ -45,7 +48,7 @@ describe('config.json', function () {
     });
 
     it('should use environment specific configuration file', function (done) {
-        run(complex, function (foo) {
+        run(tests.complex, function (foo) {
             assert.equal(foo, 'baz');
             done();
         }, {
@@ -54,7 +57,7 @@ describe('config.json', function () {
     });
 
     it('should use environment variables', function (done) {
-        run(complex, function (foo) {
+        run(tests.complex, function (foo) {
             assert.equal(foo, 'bar');
             done();
         }, {
@@ -63,12 +66,21 @@ describe('config.json', function () {
     });
 
     it('should use command-line arguments', function (done) {
-        run(complex, function (foo) {
+        run(tests.complex, function (foo) {
             assert.equal(foo, 'qux');
             done();
         }, {
             env: { NODE_ENV: 'development', foo: 'bar' },
             args: ['--foo', 'qux']
+        });
+    });
+
+    it('should use specific configuration file', function (done) {
+        run(tests.specific, function (foo) {
+            assert.equal(foo, 'qux');
+            done();
+        }, {
+            env: { NODE_ENV: 'development' }
         });
     });
 });
