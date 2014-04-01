@@ -85,6 +85,15 @@ mongodb:
  port: 10065
 ```
 
+### Load configuration for the specific environment
+
+Environment can be set by passing `env` argument:
+
+```js
+var developmentConfig = require('config.json')('./sample.json', 'development');
+var productionConfig = require('config.json')('./sample.json', 'production');
+```
+
 ### One more thing...
 
 `filepath` can be empty if your configuration file is in the current working directory of the process and is called **config.json**.
