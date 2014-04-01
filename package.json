@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "config.json",
     "description": "nconf wrapper that simplifies work with environment specific configuration files.",
     "keywords": [
