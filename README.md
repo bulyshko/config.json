@@ -17,8 +17,8 @@ and then:
 
 ## Installation
 
-```bash
-$ npm install config.json
+```
+npm install config.json
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ The top-level of `config.json` is a function that loads configuration file with 
 
 ### Create default configuration file
 
-```bash
-$ vi sample.json
+```
+vi sample.json
 ```
 
 ```json
@@ -43,8 +43,8 @@ $ vi sample.json
 
 ### Create environment specific configuration file
 
-```bash
-$ vi sample.development.json
+```
+vi sample.development.json
 ```
 
 ```json
@@ -57,8 +57,8 @@ $ vi sample.development.json
 
 ### Test config.json in action
 
-```bash
-$ vi sample.js
+```
+vi sample.js
 ```
 
 ```js
@@ -72,8 +72,8 @@ console.log("mongodb:\n",
 
 Run the above script:
 
-```bash
-$ NODE_ENV=development node ./sample.js --mongodb:host "dharma.mongohq.com" --mongodb:port 10065
+```
+NODE_ENV=development node ./sample.js --mongodb:host "dharma.mongohq.com" --mongodb:port 10065
 ```
 
 The output will be:
