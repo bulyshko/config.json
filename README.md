@@ -1,9 +1,9 @@
 # config.json
 
-[nconf](https://github.com/flatiron/nconf) wrapper that simplifies work
+[nconf][nconf] wrapper that simplifies work
 with environment specific configuration files.
 
-[![Build Status](https://travis-ci.org/bulyshko/config.json.svg?branch=master)](https://travis-ci.org/bulyshko/config.json) [![Dependency Status](https://david-dm.org/bulyshko/config.json.svg?theme=shields.io)](https://david-dm.org/bulyshko/config.json)
+[![Build Status][build]][travis] [![Dependency Status][dependency]][david]
 
 **config.json** is easy to use; it:
 
@@ -100,4 +100,11 @@ var productionConfig = require('config.json')('./sample.json', 'production');
 
 ## License
 
-Released under the [MIT license](https://raw.github.com/bulyshko/config.json/master/LICENSE).
+Released under the [MIT license][license].
+
+[nconf]:https://github.com/flatiron/nconf
+[license]:https://raw.github.com/bulyshko/config.json/master/LICENSE
+[build]:https://travis-ci.org/bulyshko/config.json.svg?branch=master
+[travis]:https://travis-ci.org/bulyshko/config.json
+[dependency]:https://david-dm.org/bulyshko/config.json.svg?theme=shields.io
+[david]:https://david-dm.org/bulyshko/config.json
