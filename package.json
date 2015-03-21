@@ -21,10 +21,10 @@
     "bugs": "https://github.com/bulyshko/config.json/issues",
     "main": "./lib/config.js",
     "dependencies": {
-        "nconf": "0.6.9"
+        "nconf": "0.7.1"
     },
     "devDependencies": {
-        "mocha": "1.18.2"
+        "mocha": "2.2.1"
     },
     "scripts": {
         "test": "mocha test/*-test.js"
