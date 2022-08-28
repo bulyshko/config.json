@@ -3,8 +3,6 @@
 [nconf][nconf] wrapper that simplifies work
 with environment specific configuration files.
 
-[![Build Status][build]][travis] [![Dependency Status][dependency]][david]
-
 **config.json** is easy to use; it:
 
 - loads the default configuration file;
@@ -15,14 +13,21 @@ and then:
 - uses environment variables;
 - and command-line arguments to override data from configuration files.
 
-## Installation
+**This package is no longer supported.**
+
+## <s>Installation</s>
+
+<s>
 
 ```
 npm install config.json
 ```
 
-## Usage
+</s>
 
+## <s>Usage</s>
+
+<s>
 The top-level of `config.json` is a function that loads configuration file with the given `filepath`.
 
 ### Create default configuration file
@@ -97,6 +102,8 @@ var productionConfig = require('config.json')('./sample.json', 'production');
 ### One more thing...
 
 `filepath` can be empty if your configuration file is in the current working directory of the process and is called **config.json**.
+
+</s>
 
 ## License
 
